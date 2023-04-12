@@ -1,1 +1,41 @@
------Lower Bound----
+-----Lower Bound---
+**using by fuction: int in=lower_bound(v.begin(),v.end(),"value")-v.begin();
+int l,r;
+int t,ans=1e5+0;
+while(l<=r)
+{
+  int mid=(l+r)/2;
+  if(a[mid]>=t)
+  {
+   ans=min(ans,mid);
+    r=mid-1;// go to left side
+  }
+  else l=mid+1;// go to right side
+}
+cout<<ans<<endl;
+
+---UpperBound---
+
+**using by fuction: int in=upper_bound(v.begin(),v.end(),"value")-v.begin();
+
+ int l=0,r=9;
+int t=3,ans=1e5+0;
+while(l<=r)
+{
+  int mid=(l+r)/2;
+  if(a[mid]<=t)
+  {
+ 
+    l=mid+1;// go to right side
+  }
+  else
+  {
+    ans=min(mid,ans);
+    r=mid-1;
+    // go to left side
+}
+
+  
+}
+cout<<ans<<endl;
+}
