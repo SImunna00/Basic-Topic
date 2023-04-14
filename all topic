@@ -39,3 +39,41 @@ while(l<=r)
 }
 cout<<ans<<endl;
 }
+
+
+-----BigMode--
+formula: 
+if x=m*n then mod of x is (m mod * n mod)mod
+
+by recursive method:
+int bigMod(int a,int b,int m)
+{
+  if(b==0) return 1%m;
+  int x= bigMod(a,b/2,m);
+   cout<<"x0 = "<<x<<endl;
+  x=(x*x)%m;
+  cout<<"x1 = "<<x<<endl;
+  cout<<"b = "<<b<<endl;
+  if(b%2==1) 
+  { x=(x*a)%m;
+    cout<<" if block x2 = "<<x<<endl;
+  }
+
+  cout<<"x3 = "<<x<<endl;
+  return x;
+
+}
+main()
+{
+ 
+  int a,b,m;
+  cin>>a>>b>>m;
+
+  
+  cout<<bigMod(a,b,m);
+ 
+
+
+
+
+}
